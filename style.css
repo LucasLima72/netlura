@@ -1,0 +1,356 @@
+/* Tema dark (padrão) */
+:root[data-theme="dark"],
+:root {
+    /* Define a cor de fundo em dark mode */
+    --bg-color: #000;
+    /* Define a cor do texto em dark mode */
+    --text-color: #fff;
+    /* Define a cor da borda ao passar o mouse em dark mode */
+    --border-hover-color: #ffffff;
+    --border-text-color: #7b7b7b;
+}
+
+/* Estilos para o corpo da página */
+body {
+    /* Define o fundo usando variável CSS */
+    background-color: var(--bg-color);
+    /* Define a cor do texto usando variável CSS */
+    color: var(--text-color);
+    /* Define a família de fontes como Arial ou sans-serif */
+    font-family: Arial, sans-serif;
+    /* Remove as margens padrão do corpo */
+    margin: 0;
+    /* Remove o padding padrão do corpo */
+    padding: 0;
+    /* Define a altura como 100% da altura da viewport */
+    height: 100vh;
+    /* Usa flexbox para o layout */
+    display: flex;
+    /* Centraliza o conteúdo horizontalmente */
+    justify-content: center;
+    /* Centraliza o conteúdo verticalmente */
+    align-items: center;
+    /* Adiciona transição suave ao trocar de tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== ESTILOS DO BOTÃO DE TOGGLE DE TEMA ===== */
+
+/* Botão de toggle de tema */
+.theme-toggle {
+    /* Remove o estilo padrão do botão */
+    background: none;
+    /* Remove a borda padrão */
+    border: none;
+    /* Adiciona espaçamento interno */
+    padding: 0.5rem;
+    /* Muda o cursor para pointer */
+    cursor: pointer;
+    /* Define a posição absoluta */
+    position: absolute;
+    /* Define a posição no topo */
+    top: 1rem;
+    /* Define a posição na direita */
+    right: 1rem;
+    /* Define o tamanho da fonte */
+    font-size: 1.5rem;
+    /* Adiciona transição ao ícone */
+    transition: transform 0.3s ease;
+    /* Define o z-index para ficar acima de outros elementos */
+    z-index: 1000;
+}
+
+/* Efeito de hover no botão */
+.theme-toggle:hover {
+    /* Aumenta a escala do botão */
+    transform: scale(1.1);
+}
+
+/* ===== ESTILOS DO ÍCONE DO TEMA ===== */
+
+/* Ícone do tema */
+.theme-icon {
+    /* Exibe o ícone como bloco */
+    display: inline-block;
+    /* Adiciona transição ao trocar de ícone */
+    transition: transform 0.3s ease;
+}
+
+
+
+/* Estilos para o elemento main */
+main {
+    /* Alinha o texto ao centro */
+    text-align: center;
+}
+
+/* Estilos para o título h1 */
+h1 {
+    /* Define o tamanho da fonte como 3rem */
+    font-size: 3rem;
+    /* Adiciona margem inferior de 2rem */
+    margin-bottom: 2rem;
+}
+
+/* Estilos para a lista não ordenada dentro de .profiles */
+.profiles ul {
+    /* Remove os marcadores da lista */
+    list-style: none;
+    /* Remove o padding padrão */
+    padding: 0;
+    /* Usa flexbox para o layout */
+    display: flex;
+    /* Adiciona espaço entre os itens de 2rem */
+    gap: 2rem;
+    /* Centraliza os itens horizontalmente */
+    justify-content: center;
+}
+
+/* Estilos para cada item de perfil */
+.profile {
+    /* Alinha o texto ao centro */
+    text-align: center;
+    /* Muda o cursor para pointer ao passar o mouse */
+    cursor: pointer;
+    /* Adiciona transição suave para transformações */
+    transition: transform 0.3s;
+}
+
+/* Estilos para as imagens dentro dos perfis */
+.profile img {
+    /* Define a largura da imagem como 150px */
+    width: 150px;
+    /* Define a altura da imagem como 150px */
+    height: 150px;
+    /* Define o raio da borda para 10% (não circular) */
+    border-radius: 10%;
+    /* Ajusta a imagem para cobrir o espaço sem distorcer */
+    object-fit: cover;
+    /* Adiciona uma borda usando variável CSS */
+    border: 1px solid transparent;
+    /* Adiciona transição suave ao trocar de borda */
+    transition: border-color 0.3s ease;
+}
+
+/* Estilos para as imagens ao passar o mouse */
+.profile:hover img {
+    /* Muda a cor da borda usando variável CSS */
+    border-color: var(--border-hover-color);
+    /* Aumenta a escala da imagem em 10% */
+    transform: scale(1.1);
+    /* Adiciona transição suave */
+    transition: ease 0.2s;
+}
+
+/* Estilos para os parágrafos dentro dos perfis */
+.profile p {
+    /* Adiciona margem superior de 1rem */
+    margin-top: 1rem;
+    /* Define o tamanho da fonte como 1.2rem */
+    font-size: 1.2rem;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVIDADE ===== */
+
+/* Estilos para mobile (até 480px) */
+@media (max-width: 480px) {
+    /* Reduz o tamanho do título para dispositivos pequenos */
+    h1 {
+        /* Define o tamanho da fonte como 1.8rem para mobile */
+        font-size: 1.8rem;
+        /* Reduz a margem inferior para mobile */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Ajusta a lista de perfis para mobile */
+    .profiles ul {
+        /* Usa grid com 2 colunas iguais */
+        display: grid;
+        /* Define 2 colunas de tamanho igual */
+        grid-template-columns: 1fr 1fr;
+        /* Reduz o espaço entre os itens */
+        gap: 1rem;
+        /* Adiciona padding horizontal */
+        padding: 0 1rem;
+        /* Garante alinhamento ao centro */
+        justify-items: center;
+    }
+
+    /* Reduz o tamanho das imagens de perfil */
+    .profile img {
+        /* Define a largura menor para mobile */
+        width: 100px;
+        /* Define a altura menor para mobile */
+        height: 100px;
+    }
+
+    /* Reduz o tamanho da fonte do nome do perfil */
+    .profile p {
+        /* Reduz o tamanho da fonte para mobile */
+        font-size: 1rem;
+        /* Reduz a margem superior */
+        margin-top: 0.5rem;
+    }
+}
+
+/* Estilos para tablet (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Ajusta o tamanho do título para tablet */
+    h1 {
+        /* Define o tamanho da fonte como 2.2rem para tablet */
+        font-size: 2.2rem;
+        /* Ajusta a margem inferior */
+        margin-bottom: 1.5rem;
+    }
+
+    /* Ajusta a lista de perfis para tablet */
+    .profiles ul {
+        /* Mantém flexbox em linha */
+        flex-direction: row;
+        /* Reduz o espaço entre os itens */
+        gap: 1.5rem;
+        /* Adiciona padding horizontal */
+        padding: 0 1rem;
+        /* Permite quebra de linha se necessário */
+        flex-wrap: wrap;
+    }
+
+    /* Ajusta o tamanho das imagens de perfil */
+    .profile img {
+        /* Define a largura para tablet */
+        width: 120px;
+        /* Define a altura para tablet */
+        height: 120px;
+    }
+
+    /* Ajusta o tamanho da fonte do nome do perfil */
+    .profile p {
+        /* Define o tamanho da fonte para tablet */
+        font-size: 1.1rem;
+        /* Ajusta a margem superior */
+        margin-top: 0.8rem;
+    }
+}
+
+/* Estilos para desktop pequeno (769px até 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Ajusta o tamanho do título para desktop pequeno */
+    h1 {
+        /* Define o tamanho da fonte como 2.5rem */
+        font-size: 2.5rem;
+        /* Ajusta a margem inferior */
+        margin-bottom: 2rem;
+    }
+
+    /* Ajusta a lista de perfis */
+    .profiles ul {
+        /* Ajusta o espaço entre os itens */
+        gap: 1.5rem;
+    }
+
+    /* Ajusta o tamanho das imagens de perfil */
+    .profile img {
+        /* Define a largura para desktop pequeno */
+        width: 130px;
+        /* Define a altura para desktop pequeno */
+        height: 130px;
+    }
+}
+
+/* Estilos para desktop grande (acima de 1025px) */
+@media (min-width: 1025px) {
+    /* Mantém os estilos originais para desktop grande */
+    h1 {
+        /* Font-size permanece 3rem */
+        font-size: 3rem;
+    }
+
+    /* Perfis mantêm tamanho original */
+    .profile img {
+        /* Mantém a largura de 150px */
+        width: 150px;
+        /* Mantém a altura de 150px */
+        height: 150px;
+    }
+}
+
+/* ===== ESTILOS PARA LINKS DOS PERFIS ===== */
+
+/* Estilos para links dentro dos perfis */
+.profile a {
+    /* Remove o estilo padrão de links */
+    text-decoration: none;
+    /* Herda a cor do texto */
+    color: inherit;
+    /* Exibe como bloco para melhor clique */
+    display: block;
+    /* Adiciona transição suave */
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover no link do perfil */
+.profile a:hover {
+    /* Mantém hover sobre o link */
+    text-decoration: none;
+}
+
+/* ===== ESTILOS DO BOTÃO DE VOLTAR ===== */
+
+/* Botão de voltar */
+.back-btn {
+    /* Remove o estilo padrão do botão */
+    background: none;
+    /* Remove a borda padrão */
+    border: none;
+    /* Define a cor do texto */
+    color: var(--text-color);
+    /* Define o tamanho da fonte */
+    font-size: 1.2rem;
+    /* Muda o cursor para pointer */
+    cursor: pointer;
+    /* Adiciona padding para melhor clique */
+    padding: 0.5rem 1rem;
+    /* Adiciona posicionamento absoluto */
+    position: absolute;
+    /* Define a posição no topo à esquerda */
+    top: 1rem;
+    /* Define a margem esquerda */
+    left: 1rem;
+    /* Adiciona transição ao hovering */
+    transition: all 0.3s ease;
+    /* Define o z-index */
+    z-index: 999;
+}
+
+/* Efeito hover no botão de voltar */
+.back-btn:hover {
+    /* Aumenta a escala do botão */
+    transform: scale(1.1);
+    /* Adiciona uma borda sublinhada */
+    text-decoration: underline;
+}
+
+/* Efeito active no botão de voltar */
+.back-btn:active {
+    /* Reduz a escala do botão */
+    transform: scale(0.95);
+}
+
+.gerenciar {
+    /* Remove o estilo padrão do link */
+    text-decoration: none;
+    /* Define a cor do texto */
+    color: var(--border-text-color);
+    /* Define o tamanho da fonte */
+    font-size: 1rem;
+    /* Muda o cursor para pointer */
+    cursor: pointer;
+    /* Adiciona padding para melhor clique */
+    padding: 0.5rem 1rem;
+    /* Adiciona margem superior */
+    margin-top: 2rem;
+    /* Exibe como bloco para centralizar */
+    display: inline-block;
+    border: 1px solid var(--border-text-color);
+    border-radius: 5px;
+}
