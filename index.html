@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Define o tipo de documento como HTML5 -->
+    <meta charset="UTF-8">
+    <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Define a escala de visualização para dispositivos móveis -->
+    <title>Netflix</title>
+    <!-- Título da página exibido na aba do navegador -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Importa o arquivo CSS com todos os estilos da página -->
+</head>
+<body>
+    <!-- Container principal da aplicação para gerenciar roteamento -->
+    <main id="app">
+        <!-- Página de seleção de perfis -->
+        <div id="profiles-page">
+            <!-- Título principal da página -->
+            <h1>Quem está assistindo?</h1>
+            <!-- Seção que contém os perfis disponíveis -->
+            <section class="profiles">
+                <!-- Lista não-ordenada dos perfis -->
+                <ul>
+                    <!-- Perfil 1: Lucas -->
+                    <li class="profile">
+                        <a href="netflix-plataform-main/catalogo/catalogo.html" class="profile-link"
+                           data-name="Lucas" data-image="/assets/perfilUm.jpg">
+                            <img src="/assets/perfilUm.jpg" alt="Perfil Lucas">
+                            <p>Lucas</p>
+                        </a>
+                    </li>
+                    <!-- Perfil 2: Vagner -->
+                    <li class="profile">
+                        <a href="netflix-plataform-main/catalogo/catalogo.html" class="profile-link"
+                           data-name="Vagner" data-image="/assets/perfilDois.jpg">
+                            <img src="/assets/perfilDois.jpg" alt="Perfil Vagner">
+                            <p>Vagner</p>
+                        </a>
+                    </li>
+                    <!-- Perfil 3: Ana -->
+                    <li class="profile">
+                        <a href="netflix-plataform-main/catalogo/catalogo.html" class="profile-link"
+                           data-name="Ana" data-image="/assets/perfilUm.jpg">
+                            <img src="/assets/perfilUm.jpg" alt="Perfil Ana">
+                            <p>Ana</p>
+                        </a>
+                    </li>
+                    <!-- Perfil 4: Kids -->
+                    <li class="profile">
+                        <a href="netflix-plataform-main/catalogo/catalogo.html" class="profile-link"
+                           data-name="Kids" data-image="/assets/perfilDois.jpg">
+                            <img src="/assets/perfilDois.jpg" alt="Perfil Kids">
+                            <p>Kids</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- Link para gerenciar/editar perfis (funcionalidade futura) -->
+            <a class="gerenciar" href="#">GERENCIAR PERFIS</a>
+        </div>
+    </main>
+
+    <!-- Importa o arquivo JavaScript com toda a lógica de tema e roteamento -->
+    <script src="js/script.js"></script>
+</body>
+</html>
